@@ -1,0 +1,21 @@
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body { background-color: rgb(0,0,0); -webkit-font-smoothing:antialiased;}
+ul { list-style: none;}
+svg { width: 24px; height: 24px; fill:rgb(255,255,255); 
+transform: rotate(45deg); transition: all 0.4s; vertical-align: middle;}
+.faq { width: 100%; height: 900px; background-color: rgb(0,0,0); color:rgb(255,255,255); padding: 60px 0 0 0;}
+.faq_ul { width: 100%; max-width: 1000px; margin: 60px auto;}
+
+.faq_ul li { margin: 0 0 10px 0; overflow: hidden; height: 60px; transition: all 0.5s; }
+.faq_ul li div { background-color: rgb(48,48,48); display: flex;
+justify-content: space-between; align-items: center; height: 60px; padding: 0 30px; }   
+.faq_ul li div h3 { font-family: 'Noto Sans', sans-serif; font-size: 26px; line-height: 26px;    }
+.faq_ul li p { background-color: rgb(48,48,48); margin:2px 0 0 0; padding: 30px; font-family: 'Noto Sans', sans-serif; font-size: 18px; line-height: 26px; word-break: keep-all;} 
+.faq_title { font-family: 'Noto Sans', sans-serif; font-size: 48px; line-height: 48px; text-align: center;  }
+
+@keyframes aniOpen {
+    0% {height: 60px;}
+    100% {height: auto;}
+}
