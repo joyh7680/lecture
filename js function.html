@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js function</title>
+</head>
+<body>
+    <div>
+        <h1 id="title" onclick="colorRed();">hellow</h1>
+        <p class="web" onclick="colorBlue();">html</p>
+        <p class="web">css</p>
+        <p class="web">js</p>
+        <p class="web">j-query</p>
+        <p class="web">react</p>
+        <p class="web">sass</p>
+        <p class="web">node.js</p>
+        <p class="web">mongoDB</p>
+
+        <h2 id="title" onclick="colorRed();">hellow</h2
+            결과>
+    </div>
+
+    <script>
+         
+        function colorred() {
+        document.getElementById('title').style="color:red;"
+        }
+        //  colorblue라고 하는 함수 
+        function colorBlue (){
+            document.getElementsByClassName('web')
+            // 출력시 배열이 됌
+// document.querySelectorAll('.모든형식의 함수를 오게할수 있음')
+        }
+        //   target 이 매개변수
+        function colorBlue(target,x) {
+            var pWeb = document.getElementsByClassName('web'); 
+            // 배열 데이터로 저장      
+            // pweb = <p> <p> <p> <p> <p> <p> <p> <p> 
+            }
+         pWeb[target].style = "color:blue;"
+        colorRed();
+        // 함수를 호출한다 = 함수를 실행시킨다
+
+        pWeb[target].style = "color:blue;"
+
+        // function colorBlue (x,y,z){
+        //     document.getElementById('result).innerHTML')= x + y * 2
+        // }
+
+        function calcX(x,y,z) {
+             var r = x+y*z;
+            // 계산만 하는  함수 
+            // return x+y*z
+            return r;
+        }
+        var xx = function(x,) {};
+
+            document.getElementById('result').innerHTML = calcX(20,30,2);
+            document.getElementById('title').innerHTML = calcX(600,30,2);
+            // 원하는 값을 얼마든지 호출할수가 있다
+            // 이게 더 효율적 
+            // 원하느 ㄴ기능을 원하는 곳에 호출할수 있도록 하는 것이 함수 기능.
+            document.getElementById('title').innerHTML = calcX(60);
+            // 인수가 안맞음녀 오류가 뜸 (nan)
+
+            document.getElementById('title').innerHTML = calcX(h,30,2);
+        //    -> h302 로 출력됨 문자와 숫자가 같이 계산되기 떄문에 좋은 건 아님
+  
+     (function() {
+    //  () 함수에 이름이 따로 없는 함수 - 익명 함수 
+     var x = "hellow";
+     document.getElementById('result').innerHTML = x;
+    }
+
+    function calcX(x,y,z) {
+             var r = x+y*z;
+            return r;
+            // 함수 안에 만 존재하는 변수 : 지역변수
+
+            var xyz;}
+            // 함수 다양한 곳에서 여러가지로 존재하는 변수 : 글로벌 변수 ,  전역 변수 
+
+
+var x = 0;
+var y = 20;
+
+function calcXy(a,b) {
+    y= a+b;
+    // return a+b;
+    return y;
+}
+
+
+document.getElementById('result').innerHTML = calXy(20,20);
+// document.getElementById('title').innerHTML = a + b;   -> 오류남
+document.getElementById('title').innerHTML = y;
+    // -> 20 
+    // ->20
+
+</script>
+</body>
+</html>
