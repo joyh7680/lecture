@@ -3,53 +3,149 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>mediaquries</title>
-   <style>
-      *{padding:0; margin: 0; box-sizing: border-box;}
+   <meta name="keywords" content="jenesis">
+   <meta name="description" content="제네시스 G70, G80, GV70, GV80, G90, G90L, 제네시스 차량 가격 및 정보, 할인이벤트 등 다양한 정보를 확인하세요 | 제네시스 공식사이트.">
+   <meta name="application-name" content="Nike.com">
+   <title>
+      제네시스(GENESIS) G70, G80, GV70, GV80, G90 </title>
 
-      .wrap {background-color: white; text-align: center;}
-      h1 {background-color: red; text-align: center; font-size: 72px;}
-      .img_wrap { display: flex;  }
-      img {width: 50%;}
+   <link rel="icon" href="img/favicon.png">
+   <link rel="icon" type="image/x-icon" href="img/favicon.ico"> 
 
-       /* ipad  */
-      @media screen and (min-width: 451px) and (max-width: 768px)
-
-      /* {
-          h1 {font-size: 48px; background-color: indigo;}
-      } */
-      
-      { 
-         h1 {font-size: 20vw; background-color: green;}
-      }
-        /* iphone */
-      @media screen and (max-width: 375px)
-      
-      {
-         h1 {font-size: 36px; background-color:pink}
-         img {width: 100%;}
-         .img_wrap {flex-wrap: wrap;}
-      }
-
-      /* laptop */
-      @media screen and (min-width:769px) and (max-width: 1700px)
-      {
-         h1 {font-size: 24px; background-color: orange; line-height: 24px;}
-         img {width:50%; height: 700px;}
-         .img_wrap {flex-wrap: wrap; display: flex;  }
-      }
-   </style>
+   <link rel="stylesheet" href="../jenesis/css/index.css">
+   <link rel="stylesheet" href="../jenesis/css/footer.css">
+   <link rel="stylesheet" href="../jenesis/css/header.css">
+   <link rel="stylesheet" href="../jenesis/css/index.css">
+   <link rel="stylesheet" href="../jenesis/css/reset_jenesis.css">
+ 
 </head>
 <body>
-
-   <div class="wrap">
-      <h1>nike. just do it. nike </h1>
-      <div class="img_wrap"> 
-         <img src="../lecture/img/nike-just-do-it (2).jpg">
-         <img src="../lecture/img/nike-just-do-it (1).jpg">
+   <header>
+      </header>
+   <main>
+      <div class="hero">
+         <div class="hero_slide">
+            <h2 class="hero_slike_title">G70</h2>
+         </div>
+         <div class="hero_slide">
+            <h2 class="hero_slike_title">GV70</h2>
+         </div>s
+         <div class="hero_slide">
+            <h2 class="hero_slike_title">G80</h2>
+         </div>
       </div>
-   </div>
 
+      <ul class="hero_slide_nav">
+         <!-- 이미지가 3장이니까 li 3개 -->
+         <li class="hero_slide_button" 
+         onclick="slidechange(0)"></li>
+         <li class="hero_slide_button" 
+         onclick="slidechange(1)"></li>
+         <li class="hero_slide_button" 
+         onclick="slidechange(2)"></li>
+      </ul>
+
+
+
+      
+
+      <!-- slick my server -->
+      <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<!-- // Add the new slick-theme.css if you want the default styling -->
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> 
+
+    
+
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+				
+
+      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+      <div class="your-class">
+         <div>your content</div>
+         <div>your content</div>
+         <div>your content</div>
+      </div>
+
+      <script>
+         // 함수정의 
+
+         //  currentSlide name 임의 설정 ???????????????
+         var currentSlide = 0;
+         var nextSlide =1;
+         // 넘어가는 슬라이드 
+
+         function slidechange(target) {
+            // 반복문
+            //  2번쨰 세번째 버튼을 눌렀을때 첫 이미지가 안보이게 하기 위함 
+            for (i=0; i<3; i++)
+            { 
+               if (i != target )
+               // i가 타겟하고 같지 않을때
+               document.getElementsByClassName
+               ('hero_slide')[i].style =
+               "display:none;"
+
+               document.getElementsByClassName
+               ('hero_slide_button')[i].style =
+               " background-color: rgba(255,255,255,0.4);"
+            }
+            document.getElementsByClassName('hero_slide')
+            [target].style =  "display:block; animation:fade_in 0.4s forwards;"
+            // forwards에서 멈춰라
+
+
+            document.getElementsByClassName
+               ('hero_slide_button')[i].style =
+               " background-color: rgba(255,255,255,1);"
+         }
+
+   
+
+      function autoSlide() {
+
+      function autoSlide() {
+         if (nextSlide ==3) {nextSlide = 0;}
+         //  3이 됫을떄 0 으로 바꿔주고 
+         //  nextSlide 라는 변수를 추가해주는 것이 더 편함
+      }
+
+         for (i=0; i<3; i++)
+            { 
+               if (i != currentSlide+1 )  {
+               // i가 타겟하고 같지 않을때
+               document.getElementsByClassName
+               ('hero_slide')[i].style =
+               "display:none;"
+
+               document.getElementsByClassName
+               ('hero_slide_button')[i].style =
+               " background-color: rgba(255,255,255,0.4);"
+
+               currentSlide = target;
+               }
+            }
+             document.getElementsByClassName('hero_slide')
+            [nextSlide+1].style =  "display:block; animation:fade_in 0.4s forwards;"
+            // forwards에서 멈춰라
+
+            document.getElementsByClassName
+               ('hero_slide_button')[currentSlide+1].style =
+               " background-color: rgba(255,255,255,1);"
+              
+
+               // 초기화면 
+               currentSlide++;
+               if (currentSlide == 3 ) { currentSlide = 0;}
+         }
+                 // setinterval 그시간에 동작을 계속 반복하게 함
+         var autoSlideChange = setInterval(autoSlide,3000);
+
+         // interval앞에 이름은 은 따로 꼭 지정해줄것
+
+      </script>
+   </main>
 </body>
-
 </html>
