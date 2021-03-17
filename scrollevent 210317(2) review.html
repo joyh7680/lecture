@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scroll Event</title>
+   <style>
+      * {margin: 0; padding: 0; box-sizing: border-box; }
+      body { }
+      div {position: relative;}
+      #result_1 { position:fixed; top: 100px; left:200px;}
+      /* # = id  */
+      #result_2 { position:fixed; top: 140px; left:200px;}
+      section { height: 100vh;}
+
+
+      #section_3 { background-image: url(img/g1920.jpg); color:white; 
+      background-position: center center; background-repeat: no-repeat;
+      padding:360px 140px 0; animation: zoom_out_bg 2s forwards; background-color: black; opacity: 1;}
+
+      .event_title { font-size:54px; font-weight: 400; margin-bottom: 50px;  animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+      .event_subtitle { font-size:26px;  font-weight: 400; margin-bottom: 40px;  animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+      .event_button { width: 240px; height: 56px; font-size:16px; background-color: white; color: black; border: none; animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+
+      @keyframes zoom_out_bg {
+         0% {background-size: 120% 120%; opacity: 1;} 
+         100% {background-size: 100% 100%; opacity: 1;}
+      }
+
+      @keyframes fade_in_up { 
+
+         0% { margin-top: 40px; opacity: 0;}
+         100% { margin-top: 0px; opacity: 1;}
+      }
+
+
+
+
+      /* @keyframes fade_in_up {
+         0% { margin-top: 100px; opacity: 0;}
+         100% { margin-top: 0; opacity: 1;}
+      }
+
+      @keyframes zoom_out {
+         0% { background-size: 150% 150%; opacity: 0.8;}
+         100% { background-size: 100% 100%; opacity: 1;}
+      } */
+   </style>
+</head>
+<body onscroll="scrollEvent();">
+   <h1>Screen Size is</h1>
+   <p id="result_1"></p>
+   <div>
+      <p id="result_2"></p> 
+   </div>
+   
+   <section id="section_1">Page 1</section>
+   <section id="section_2">
+      <h2 class="section_title">Page 2</h2>
+   </section>
+   <section id="section_3">
+      <h2 class="event_title">GENESIS EVENT</h2>
+      <h3 class="event_subtitle">제네시스에서 진행중인 다양한 이벤트를 소개합니다.</h3>
+      <button class="event_button">이벤트 소개</button>
+   </section>
+
+   <script>
+
+      // document.getElementById('result_1').innerHTML = "Width is " + screen.width;
+      // document.getElementById('result_2').innerHTML = "Height is " + screen.height;
+
+      // document.getElementById('result_1').innerHTML = "Width is " + document.documentElement.clientWidth;
+      // document.getElementById('result_2').innerHTML = "Height is " + document.documentElement.clientHeight;
+
+      // document.getElementById('result_1').innerHTML = "Available Width is " + screen.availWidth;
+      // document.getElementById('result_2').innerHTML = "Available Height is " + screen.availHeight;
+
+      // document.getElementById('result_1').innerHTML =  "Scroll Top is" + window.pageYOffset
+      // document.getElementById('result_2').innerHTML =  "Section 2 offsetTop is " + document.getElementById('section_2').offsetTop;
+      
+      var scrollY = window.pageYOffset;
+                 // window.pageYOffset 문서의 세로 스크롤 크기
+      var pageHeight = document.documentElement.clientWidth
+         //  화면의 높이                         ﻿ 테두리나 스크롤 막대를 포함하지않고 패딩을 사용하는 상자 내용의 시각적인 부분.﻿
+      var aniEle01Y = document.getElementById(section_3).offsetTop;
+                                                      //  ﻿offsettop - 위로부터 떨어진간격
+      function scrollEvent() { 
+         // document.getElementById('result_2').innerHTML = "Scroll Top is " + window.pageYOffset;
+
+         scrollY = window.pageYOffset;
+         //  scrollY﻿ 현재 스크롤된 위치를 숫자로 반환 
+         // 스크롤 탑 값을 갱신한다.?????????? 안해주면 초기화????
+         // 여기는 왜 앞에 var 가 안붙는거??????????????????
+         
+
+         document.getElementById('result_1').innerHTML =  "Scroll Top is" + window.pageYOffset
+         document.getElementById('result_2').innerHTML =  "Section 2 offsetTop is " + document.getElementById('section_2').offsetTop;
+
+         if ( window.pageYOffset  > document.getElementById('section_2').offsetTop - document.documentElement.clientHeight + 300 ) {
+            document.getElementsByClassName('section_title')[0].style = "font-size:100px;";
+         }
+      }
+   </script>
+</body>
+</html>
