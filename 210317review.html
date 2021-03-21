@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>kn color change</title>
+   <style>
+      * {margin: 0; padding: 0; box-sizing: border-box; }
+      body { }
+      div {position: relative;}
+      #result_1 { position:fixed; top: 100px; left:200px;}
+      #result_2 { position:fixed; top: 140px; left:200px;}
+      section { height: 100vh;}
+       
+
+      #section_3 { background-image: url(img/g1920.jpg); color:white; 
+      background-position: center center; background-repeat: no-repeat;
+      padding:360px 140px 0; animation: zoom_out_bg 2s forwards; background-color: black; opacity: 1;}
+
+      .event_title { font-size:54px; font-weight: 400; margin-bottom: 50px;  animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+      .event_subtitle { font-size:26px;  font-weight: 400; margin-bottom: 40px;  animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+      .event_button { width: 240px; height: 56px; font-size:16px; background-color: white; color: black; border: none; animation: fade_in_up 2s 0.5s forwards; opacity: 0;}
+
+      #section_2 {background-color: black; }
+      .section_2_title {text-align: center; }
+
+
+      @keyframes zoom_out_bg {
+         0% {background-size: 120% 120%; opacity: 1;} 
+         100% {background-size: 100% 100%; opacity: 1;}
+      }
+
+      @keyframes fade_in_up { 
+
+         0% { margin-top: 40px; opacity: 0;}
+         100% { margin-top: 0px; opacity: 1;}
+      }
+
+   </style>
+</head>
+<body onscroll="scrollEvent();">
+   <h1>Screen Size is</h1>
+   <p id="result_1"></p>
+   <div>
+      <p id="result_2"></p> 
+   </div>
+   
+   <section id="section_1">Page 1</section>
+   <section id="section_2">
+      <h2 class="section_2_title">
+         <img src="../kia_oursymbol_1/img/logo-d.png">
+      </h2>
+   </section>
+   <section id="section_3">
+      <h2 class="event_title">GENESIS EVENT</h2>
+      <h3 class="event_subtitle">제네시스에서 진행중인 다양한 이벤트를 소개합니다.</h3>
+      <button class="event_button">이벤트 소개</button>
+   </section>
+
+   <script>
+      
+      var scrollY = window.pageYOffset;
+                     // 문서의 세로 스크롤 크기 
+      var pageHeight = document.documentElement.clientHeight;
+                     //   테두리나 스크롤 막대를 포함하지 않고 패딩을 사용하는 상자내용의 시각적인 부분 
+      var aniEle02Y = document.getElementById('section_2').offsetTop; 
+                                                    //   위로부터떨어진 간격 
+                     //  section2의 offsettop 은 100vh ? 
+                     //  aniele01y = 100vh? 
+                                                      
+
+      function scrollEvent() { 
+       
+         scrollY = window.pageYOffset; //스크롤 탑값을 갱신
+
+         // page2 animation 
+         if ( scrollY > aniEle02Y - pageHeight) {
+            var disY = scrollY - aniELE02Y + pageHeight;
+            // 변수 disy =  세로스크롤크기 - section2의 offsettop값 + clientheight 
+            //  세로스크롤크기 > 100vh - 900px
+            document.getElementsByClassName('section_2_title')[0].style =
+            "opacity:0.1;"
+         }
+        }
+      
+   </script>
+</body>
+</html>
