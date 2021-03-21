@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>scroll event</title>
+   <style>
+      * {margin: 0; padding: 0; box-sizing: border-box;}
+      section {width: 100%; height: 100vh; background-color: yellow;}
+      #section_2, #section_4 {background-color: orange;}
+      html { scroll-behavior: smooth;}  /* safari , ie 지원안됨  */
+      #result_1 { position: fixed; top: 200px; left: 300px; z-index: 1000;}
+      #result_2 { position: fixed; top: 240px; left: 300px; z-index: 1001;}
+      #section_2 {position: relative;}
+      .img_1 {position: absolute; top: 150px; left: -300px;}
+      .img_2 {position: absolute; top: 150px; left: 300px;}
+
+      /* css animation 설정하기 keyframes */
+      @keyframes ani_move_toright {
+         0% {left: -300px;}
+         100% {left: 520px;}
+      }
+      @keyframes ani_move_toleft {
+         0% { right:300px;}
+         100% { right: 520px;}
+      }
+       
+   </style>
+</head>
+ <!-- onscroll이벤트 동작은  영역의 스크롤바를 움직일때 동작한다. -->
+<body onscroll="scrollEvent()">
+   <h1>scroll event</h1>
+   <h2 id="result_1"></h2>
+   <h3 id="result_2"></h3>
+   <p>
+      <a href="#section_1">section 1 </a>
+      <a href="#section_2">section 2</a>
+      <a href="#section_3">section 3</a>
+      <a href="#section_4">section 4</a>
+   </p>
+   <section id="section_1">
+      <p>section 1</p>
+   </section>
+   <section id="section_2">
+      <p>section 2</p>
+      <img class="img_1" 
+           src="../starbucks/img/2021_spring_bean.png">
+      <img class="img_2"
+           src="../starbucks/img/2021_spring_bean_txt.png">
+   </section>
+   <section id="section_3">
+      <p>section 3</p>
+   </section>
+   <section id="section_4">
+      <p>section 4</p>
+   </section>
+</body>
+<script>
+   // 모니터 해상도 값 구하기  
+   // document.getElementById('result').innerHTML = screen.width;
+                         //innerHTML 태그 내부의 텍스트를 의미
+
+    var screenH = document.documentElement.clientHeight;
+       //  document.documentElement.clientHeight;브라우저의 높이 
+    var windowScrollY = window.pageYOffset;
+              //   scrollY﻿스크롤이 움직일 때 윈도우의 위치    
+   //  var aniEle01Y = document.getElementsByClassName('img_1')[0].offsetTop;
+     // offsettop ﻿ 가장 가까운 부모에 대해, 상대적 픽셀값 }  
+     var aniEle01Y = document.getElementById('section_2').offsetTop;
+                                    
+       
+    //화면 스크롤 될때 스크롤 값
+    function scrollEvent() {
+      windowScrollY = window.pageYOffset;
+
+      document.getElementById('result_1').innerHTML = window.scrollY;
+      // document.getElementById('result_1').innerHTML = window.pageYOffset;
+        // window.pageyoffset﻿스크롤이 움직일 때 윈도우의 위치
+
+      document.getElementById('result_2').innerHTML = aniEle01Y;
+                                      
+      if (window.pageYOffset >  aniEle01Y - screenH + 200) {
+      document.getElementsByClassName('img_1')[0].style = 
+      "animation:ani_move_toright 3s forwards;"; 
+                                   //forwards 마지막상태 유지 
+                              // QQ pageYOffset 값이 200이 맞는지
+      document.getElementsByClassName('img_2')[0].style = 
+      "animation:ani_move_toleft 3s forwards;"; 
+      //   구현 x , 구현순서 이해 x 
+   }
+    }
+   
+</script>
+</html>
