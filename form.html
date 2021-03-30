@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>form</title>
+</head>
+<body>
+   <form action="member.php">
+      <fieldset>
+         <!-- form요소에서 연관된 요소들을 하나의 그룹으로 묶을 때 사용
+         하나의 그룹으로 묶은 요소들 주변으로 박스모양의 선을 그려줌 -->
+         <!-- legend의 박스선 -->
+         <legend>개인정보</legend>
+         <!-- legend 요소를 사용하면 fieldest 요소의 캡션을 정의할 수 있다. -->
+
+         <h3>성별</h3>
+         <input type="radio" name="man" value="man" id="man_r">
+         <label for="man_r">남자</label>
+         <!-- .label = 제목. 이름 for = label의 id  -->
+
+         <input type="checkbox" name="woman" id="man_w">
+         <label for="woman_w">여자</label>
+         <input type="submit">
+
+         <div>
+            <select name="language">
+       <!-- 옵션을 선택하는 메뉴.
+              메뉴바 생성됨  -->
+               <option value="korean">한국어</option>
+           <!-- select 나 datalist 에서 사용됨  -->
+               <option value="english" selected>영어</option>
+                                 <!-- 선택된 옵션  -->
+               <option value="chinese">중국어</option>
+                  <!-- 양식으로 제출될 값, 
+                       생략시 포함된 텍스트값으로 사용 -->
+            </select>
+         </div>
+
+      </fieldset>
+      <br>
+      <textarea name="user_memo" rows="10" cols="30">
+         메모
+
+      </textarea>
+      <br>
+
+      <button type="button" onclick="alert('데이터가 지워집니다')">
+       Click</button>
+       <!-- click이라는 버튼을 누르면 
+       데이터가 지워집니다 라는 경고창이 뜨게됨 
+       경고창 = alert  -->
+     
+   <input list="pets">
+   <datalist id="pets">
+       <option>레오</option>
+       <option>수콩</option>
+       <option>금치</option>
+       <option>칸다</option>
+   </datalist>
+
+
+     <!-- datalist : input의 list 미리 설정 
+      미리설정된 옵션들은 input 에서 드롭다운리스트로 보여줌
+   자동완성 기능을 제공 -->
+   </form>
+</body>
+</html>
