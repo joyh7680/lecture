@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Date</title>
+</head>
+<body>
+   <p id="result"></p>
+   <p id="year"></p>
+   <p id="month"></p>
+   <p id="date"></p>
+
+   <p id="day"></p>
+   <p id="hour"></p>
+   <p id="minute"></p>
+   <p id="second"></p>
+
+   <script>
+      var today = new Date(); // 날짜 오브젝트를 생성
+      document.getElementById('result').innerHTML = today;
+
+      // 현재 브라우저 년도
+      var year=today.getFullYear();
+      document.getElementById('year').innerHTML = year;
+
+      // 현재 브라우저 달
+      var month=today.getMonth() + 1; // 0 ~ 11값을 반환, 1월이 0
+      document.getElementById('month').innerHTML = month;
+
+      // 현재 브라우저 일
+      var date=today.getDate();
+      document.getElementById('date').innerHTML = date;
+
+      // 현재 브라우저 요일
+      var day=today.getDay(); // 요일 0~6 값을 반환 - 일요일 0
+      
+      if (day == 0) { day = "일";}
+         else if (day == 1) { day = "월";}
+         else if (day == 2) { day = "화";}
+         else if (day == 3) { day = "수";}
+         else if (day == 4) { day = "목";}
+         else if (day == 5) { day = "금";}
+         else { day = "토";}
+
+      document.getElementById('day').innerHTML = day;
+
+      // 현재 브라우저 시
+      var hour=today.getHours(); // 24시간 형식 - 0 ~ 23
+      var amPm;
+
+      if (hour >= 12) { amPm = "오후";} 
+         else { amPm = "오전";}  // 오전 오후를 결정
+
+      if (hour > 12) { hour = hour - 12;} //  24시간제를 12시간제로 변경
+      // @ -12 ? -11? -10? -9는?? 
+
+      document.getElementById('hour').innerHTML = amPm + " " + hour + "시";
+
+      // 현재 브라우저 분
+      var minute=today.getMinutes();
+      document.getElementById('minute').innerHTML = minute;
+
+      // 현재 브라우저 초
+      var second=today.getSeconds();
+      document.getElementById('second').innerHTML = second;
+
+
+   </script>
+</body>
+</html>
