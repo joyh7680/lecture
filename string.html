@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      var str = 'hellow world'; //0번은 h 1번은 e 2번은 l  공백도 인덱스순서 포함됨 
+      var str1 = 'javascript';
+      var str2 = str.indexOf('world'); //world의 인덱스번호가 몇번이냐
+      var str3 = str.indexOf('worlds'); 
+
+      var newStr1 = str.concat(str1);  //concat 합치기 
+      var n = str.charAt(2); //캐릭터at어디에 
+  
+      console.log(n);  //console창 l 이 뜸
+      alert(n); //경고창에 l 이 뜸
+       
+      //alert으로 띄우는거 보다 consle에 다가 입력하는게 좋음
+
+      console.log(newStr1); //console : hellow world javascript
+
+      console.log(str2); //console : 7
+      console.log(str3); //console : -1 이라는 건 내가 도출하고싶은 결과가 없다는 뜻! 오류의 결과.
+
+   </script>
+</body>
+</html>
